@@ -12,6 +12,10 @@ const connect = function () {
   conn.on("data", (data) => {
     console.log("incoming data: " + data);
   });
+  conn.on("connect", () => {
+    console.log("Connection established.");
+    conn.write("Name: LAW");
+  })
   return conn;
 };
 
